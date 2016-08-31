@@ -23,6 +23,7 @@ run_160.150.plans_selected.xml
 plans_selected_car_berlin.xml
 network_berlin.xml
 output_plans_100it.xml
+MATSimUtilityFunction/input/output_plans_100it.xml
 plans_matching_test.xml
 plans_selected_car_berlin.xml.gz
 

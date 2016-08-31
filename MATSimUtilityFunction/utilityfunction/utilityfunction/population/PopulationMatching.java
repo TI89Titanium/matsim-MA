@@ -3,6 +3,7 @@ package utilityfunction.population;
 import java.util.List;
 
 import org.matsim.api.core.v01.Scenario;
+import org.matsim.core.config.Config;
 
 
 public class PopulationMatching {
@@ -10,7 +11,7 @@ public class PopulationMatching {
 	public static final String[] columnSelection = {"UserID", "DTWmax","MOS3","MOS4", "SOC6", "MPT"};
 	MATSimPopulation matSimPopulation;
 	
-	public Scenario matchPopulation(String configFile, String csvFile) {
+	public Scenario matchPopulation(Config config, String csvFile) {
 
 		//prepare Data - input: raw survey data
 		SurveyData surveyData = new SurveyData(csvFile);
@@ -19,7 +20,7 @@ public class PopulationMatching {
 		List <String[]> surveyPopulationList = surveyData.getSurveyPopulationList(columnSelection);
 				
 		//get population + get Data from Population (act + modes)
-		this.matSimPopulation = new MATSimPopulation(configFile);
+		this.matSimPopulation = new MATSimPopulation(config);
 		
 		matSimPopulation.addAttributes(surveyPopulationList);
 		
@@ -36,7 +37,7 @@ public class PopulationMatching {
 	}
 	
 	//String selectedMode is the mode-id as used in the survey: e.g. "D" for car (self-driver)
-	public Scenario matchPopulationSpecificModes(String configFile, String csvFile, String[] selectedModes) {
+	public Scenario matchPopulationSpecificModes(Config config, String csvFile, String[] selectedModes) {
 
 		//prepare Data - input: raw survey data
 		SurveyData surveyData = new SurveyData(csvFile);
@@ -46,7 +47,7 @@ public class PopulationMatching {
 		//delete all entries with other modes
 		surveyPopulationList = surveyData.getSurveyPopulationListSpecificModes(surveyPopulationList, 3, selectedModes);
 		//get population + get Data from Population (act + modes)
-		this.matSimPopulation = new MATSimPopulation(configFile);
+		this.matSimPopulation = new MATSimPopulation(config);
 		
 		matSimPopulation.addAttributes(surveyPopulationList);
 		

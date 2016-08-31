@@ -40,6 +40,56 @@
 		<param name="snapshotFormat" value="" />
 	</module>
 	
+	
+	<!-- ================  Parameters for Advanced Utility Function  ================ -->
+
+	<module name="UtilityFunctionParameters" >
+		<param name="MPT_Parmeter" value="1.0" />	
+	</module>
+
+<!-- ================  Modal Preference Type Module - MPT  ================ -->
+	<module name="MPT_PragmaticLongDistanceDriver" >
+		<param name="MPTValue_Walk" value="5.0" />	
+		<param name="MPTValue_PT" value="7.0" />
+		<param name="MPTValue_Car" value="5.0" />
+        <param name="MPTValue_CS_Ride" value="4.0" />
+		<param name="MPTValue_Train" value="4.0" />	
+	</module>
+	
+	<module name="MPT_AutoAddicted" >
+		<param name="MPTValue_Walk" value="2.0" />	
+		<param name="MPTValue_PT" value="3.0" />
+		<param name="MPTValue_Car" value="6.0" />
+        <param name="MPTValue_CS_Ride" value="5.0" />
+		<param name="MPTValue_Train" value="1.0" />	
+	</module>
+	
+	<module name="MPT_ActivePublicTransportationLover" >
+		<param name="MPTValue_Walk" value="6.0" />	
+		<param name="MPTValue_PT" value="6.0" />
+		<param name="MPTValue_Car" value="1.0" />
+        <param name="MPTValue_CS_Ride" value="3.0" />
+		<param name="MPTValue_Train" value="2.0" />	
+	</module>
+	
+	<module name="MPT_LazyPublicTransportationLover" >
+		<param name="MPTValue_Walk" value="1.0" />	
+		<param name="MPTValue_PT" value="6.0" />
+		<param name="MPTValue_Car" value="1.0" />
+        <param name="MPTValue_CS_Ride" value="2.0" />
+		<param name="MPTValue_Train" value="2.0" />	
+	</module>
+	
+	<module name="MPT_ActiveAutoLover" >
+		<param name="MPTValue_Walk" value="4.0" />	
+		<param name="MPTValue_PT" value="3.0" />
+		<param name="MPTValue_Car" value="7.0" />
+        <param name="MPTValue_CS_Ride" value="1.0" />
+		<param name="MPTValue_Train" value="1.0" />	
+	</module>
+
+<!-- ====================================================================== -->
+
 	<module name="strategy">
 		<param name="maxAgentPlanMemorySize" value="10" /> <!-- 0 means unlimited -->
 

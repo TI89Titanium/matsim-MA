@@ -3,7 +3,7 @@ package utilityfunction.config;
 import org.matsim.core.config.ReflectiveConfigGroup;
 
 public class UtilityFunctionParametersConfigGroup extends ReflectiveConfigGroup {
-	public static final String GROUP_NAME = "Carsharing";
+	public static final String GROUP_NAME = "UtilityFunctionParameters";
 	
 	private Double MPT_Parmeter = null;
 	

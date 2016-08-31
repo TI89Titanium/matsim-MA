@@ -63,7 +63,7 @@ public class UtilityFunctionControler {
 		if(doMatching){
 		//add agent characteristics/attributes via PopulationMatching input:configFile + csvFile; return scenario file with changed attribute-Infos
 		PopulationMatching populationMatching = new PopulationMatching();
-		scenario = populationMatching.matchPopulation(configFile, csvFileMatching);
+		scenario = populationMatching.matchPopulation(config, csvFileMatching);
 		}
 		else {
 			scenario = ScenarioUtils.loadScenario(config);

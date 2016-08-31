@@ -11,7 +11,7 @@ import org.matsim.api.core.v01.population.Person;
 import org.matsim.api.core.v01.population.PlanElement;
 import org.matsim.core.population.PlanImpl;
 import org.matsim.api.core.v01.population.Population;
-import org.matsim.core.config.ConfigUtils;
+import org.matsim.core.config.Config;
 import org.matsim.core.scenario.ScenarioUtils;
 import org.matsim.utils.objectattributes.ObjectAttributes;
 
@@ -21,9 +21,9 @@ public class MATSimPopulation {
 	final Population population;
 	List<String[]> matchingList = new ArrayList<String[]>();
 	
-	public MATSimPopulation(String configFile){
+	public MATSimPopulation(Config config){
 		//get population from configFile
-		this.scenario = ScenarioUtils.loadScenario(ConfigUtils.loadConfig(configFile));
+		this.scenario = ScenarioUtils.loadScenario(config);
 		this.population = scenario.getPopulation();
 	}
 	

@@ -3,6 +3,8 @@ package utilityfunction.test;
 import java.util.List;
 
 import org.matsim.api.core.v01.Scenario;
+import org.matsim.core.config.Config;
+import org.matsim.core.config.ConfigUtils;
 
 import utilityfunction.population.MATSimPopulation;
 import utilityfunction.population.PopulationMatching;
@@ -15,7 +17,9 @@ public class PopulationMatchingTest {
 		String configFileMatchingLegScoring = "../MATSimUtilityFunction/input/config_popmatching_legscoring.xml";
 		//PopulationMatching populationMatching = new PopulationMatching.matchPopulation(configFileMatching, csvFileMatching);
 		
-		MATSimPopulation matSimPopulation = new MATSimPopulation(configFileMatchingLegScoring);
+		Config config = ConfigUtils.loadConfig(configFileMatchingLegScoring);
+		
+		MATSimPopulation matSimPopulation = new MATSimPopulation(config);
 		
 		List <String[]> matSimPopulationMatchingList = matSimPopulation.getMATSimPopulationMatchingList();
 		
@@ -26,7 +30,7 @@ public class PopulationMatchingTest {
 		//Scenario scenario = populationMatching.matchPopulation(configFileMatchingLegScoring, csvFileMatching);
 		
 		String selectedModes[] = {"D", "E"};
-		Scenario scenario = populationMatching.matchPopulationSpecificModes(configFileMatchingLegScoring, csvFileMatching, selectedModes);
+		Scenario scenario = populationMatching.matchPopulationSpecificModes(config, csvFileMatching, selectedModes);
 		
 		//Print Number of Agents
 		//Print Distribution of DAILY_INCOME

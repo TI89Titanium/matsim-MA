@@ -47,7 +47,7 @@ public class MPT_ActivePublicTransportationLoverConfigGroup extends ReflectiveCo
 		return this.MPTValue_Car;
 	}
 
-	@StringSetter( "vehiclelocationsFreefloating" )
+	@StringSetter( "MPTValue_Car" )
 	public void setMPTValue_Car(final Double MPTValue_Car) {
 		this.MPTValue_Car = MPTValue_Car;
 	}

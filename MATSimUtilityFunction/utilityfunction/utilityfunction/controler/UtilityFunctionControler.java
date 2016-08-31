@@ -22,7 +22,7 @@ import org.matsim.utils.objectattributes.ObjectAttributes;
 
 import utilityfunction.constants.UtilityFunctionConstants;
 import utilityfunction.population.PopulationMatching;
-import utilityfunction.scoring.function.WolfLegScoring;
+import utilityfunction.scoring.WolfLegScoring;
 
 
 public class UtilityFunctionControler {

@@ -5,6 +5,7 @@ import org.matsim.core.controler.Controler;
 
 import utilityfunction.config.UtilityFunctionUtils;
 import utilityfunction.population.PopulationMatching;
+import utilityfunction.scoring.WolfLegScoringFunctionFactory;
 
 public class CarsharingBerlinControler {
 
@@ -28,6 +29,10 @@ public class CarsharingBerlinControler {
 		
 		//controler for MATSim
 		Controler controler = new Controler(scenario);
+		
+		//set up new scoring function WolfLegScoring with function factory;
+		controler.setScoringFunctionFactory(new WolfLegScoringFunctionFactory(scenario));
+		
 		
 		//run MATSim
 		controler.run();

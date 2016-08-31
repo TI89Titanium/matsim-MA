@@ -26,8 +26,10 @@ public class CarsharingBerlinControler {
 		Scenario scenario = populationMatching.matchPopulationSpecificModes(config, csvFile, selectedModes);
 		
 		
-		
+		//controler for MATSim
 		Controler controler = new Controler(scenario);
+		
+		//run MATSim
 		controler.run();
 		
 

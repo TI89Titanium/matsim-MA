@@ -88,18 +88,74 @@
 		<param name="MPTValue_Train" value="1.0" />	
 	</module>
 
+<!-- =================== Carsharing Module ============================= -->
+
+<module name="Carsharing" >
+		<param name="statsWriterFrequency" value="1" />	
+				
+	</module>    
+        
+        
+	<module name="FreeFloating" >
+		<param name="vehiclelocationsFreefloating" value="&INBASE;/Stations.txt" />	
+		<param name="travelingFreeFloating" value="-1.0" />
+		<param name="constantFreeFloating" value="-0.0" />
+        <param name="timeFeeFreeFloating" value="-0.001" />
+		<param name="distanceFeeFreeFloating" value="-0.001" />
+   		<param name="specialTimeStart" value="0" />
+		<param name="specialTimeEnd" value="0" />
+		<param name="specialTimeFee" value="0" />
+
+        <param name="useFreeFloating" value="false" />		
+	</module>
+    
+	<module name="OneWayCarsharing" >
+		<param name="vehiclelocationsOneWayCarsharing" value="&INBASE;/Stations.txt" />	
+		<param name="travelingOneWayCarsharing" value="-10.0" />
+		<param name="constantOneWayCarsharing" value="-0.4" />
+        <param name="timeFeeOneWayCarsharing" value="-0.0" />
+		<param name="distanceFeeOneWayCarsharing" value="-0.0" />
+        <param name="useOneWayCarsharing" value="false" />
+        <param name="searchDistanceOneWayCarsharing" value="2000.0" />		
+	</module>
+    
+	<module name="TwoWayCarsharing" >
+		<param name="vehiclelocationsTwoWayCarsharing" value="&INBASE;/Stations.txt" />	
+		<param name="travelingTwoWayCarsharing" value="-6.0" />
+		<param name="constantTwoWayCarsharing" value="-0.4" />
+        <param name="timeFeeTwoWayCarsharing" value="-0.0" />
+		<param name="distanceFeeTwoWayCarsharing" value="-0.0" />
+        <param name="useTwoWayCarsharing" value="true" />
+        <param name="searchDistanceTwoWayCarsharing" value="1000.0" />
+
+	</module>
+
 <!-- ====================================================================== -->
 
 	<module name="strategy">
 		<param name="maxAgentPlanMemorySize" value="10" /> <!-- 0 means unlimited -->
 
-		<param name="ModuleProbability_1" value="0.8" />
+		<param name="ModuleProbability_1" value="0.6" />
 		<param name="Module_1" value="ChangeExpBeta" />
 
 		<param name="ModuleProbability_2" value="0.2" />
 		<param name="Module_2" value="ReRoute" />
 		<param name="ModuleDisableAfterIteration_2" value="200" />
+		
+		<param name="Module_3" value="ChangeTripMode" />
+		<param name="ModuleProbability_3" value="0.2" />
 	</module>
+
+<!-- ================  ChangeTripMode - Strategy-Settings ================ -->
+	
+	<module name="changeLegMode">
+	
+		<param name="modes" value="car,bike" />
+		<param name="ignoreCarAvailability" value="true"/>
+	
+	</module>
+
+<!-- ====================================================================== -->	
 	
 	<module name="planCalcScore" >
 		<param name="marginalUtilityOfMoney" value="1.0" />

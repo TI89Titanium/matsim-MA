@@ -13,6 +13,7 @@ public class PopulationMatchingTest {
 
 	public static void main(String[] args) {
 		String csvFileMatching = "C:/Users/Maximilian/Dropbox/01_KIT/Abschlussarbeit/UtilityMobility/Files/MIWDataRaw.csv";
+		String csvFileMatchingNew = "C:/Users/Maximilian/Dropbox/01_KIT/Abschlussarbeit/UtilityMobility/Files/MIWDataRaw_MTP_new.csv";
 		String configFileMatching = "../MATSimUtilityFunction/input/config_popmatching.xml";
 		String configFileMatchingLegScoring = "../MATSimUtilityFunction/input/config_popmatching_legscoring.xml";
 		//PopulationMatching populationMatching = new PopulationMatching.matchPopulation(configFileMatching, csvFileMatching);
@@ -27,10 +28,10 @@ public class PopulationMatchingTest {
 		printMATSimPopInfo(matSimPopulationMatchingList);
 		//create SurveyList and print info
 		PopulationMatching populationMatching = new PopulationMatching();
-		//Scenario scenario = populationMatching.matchPopulation(configFileMatchingLegScoring, csvFileMatching);
+		Scenario scenario = populationMatching.matchPopulation(config, csvFileMatchingNew);
 		
 		String selectedModes[] = {"D", "E"};
-		Scenario scenario = populationMatching.matchPopulationSpecificModes(config, csvFileMatching, selectedModes);
+		//Scenario scenario = populationMatching.matchPopulationSpecificModes(config, csvFileMatchingNew, selectedModes);
 		
 		//Print Number of Agents
 		//Print Distribution of DAILY_INCOME

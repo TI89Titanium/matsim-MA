@@ -111,11 +111,14 @@
 
 <module name="strategy">
 	
+		<param name="maxAgentPlanMemorySize" value="5" />
+		
 		<param name="ModuleProbability_1" value="0.5" />
 		<param name="Module_1" value="SelectExpBeta" />
 		
-		<!-- 
-		<param name="maxAgentPlanMemorySize" value="5" />	
+		<param name="Module_2" value="ChangeTripMode" />
+		<param name="ModuleProbability_2" value="0.5" />
+		<!-- 	
 		<param name="ModuleProbability_2" value="0.5" />
 		<param name="Module_2" value="RandomTripToCarsharingStrategy" />	
 		<param name="ModuleDisableAfterIteration_2" value="1000" />
@@ -123,12 +126,10 @@
         <param name="ModuleProbability_3" value="0.5" />
         <param name="Module_3" value="CarsharingSubtourModeChoiceStrategy" />	
 		<param name="ModuleDisableAfterIteration_3" value="1000" />
-		
 		 -->
-		<param name="Module_2" value="ChangeTripMode" />
-		<param name="ModuleProbability_2" value="0.5" />
-
+		
 </module>
+
 <!-- ================  ChangeTripMode - Strategy-Settings ================ -->
 	
 	<module name="changeLegMode">

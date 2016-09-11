@@ -159,7 +159,7 @@
 	
 	<module name="changeLegMode">
 	
-		<param name="modes" value="car,bike" />
+		<param name="modes" value="car,twowaycarsharing" />
 		<param name="ignoreCarAvailability" value="true"/>
 	
 	</module>
@@ -200,7 +200,7 @@
 				<param name="marginalUtilityOfDistance_util_m" value="0.0" />
 				<param name="marginalUtilityOfTraveling_util_hr" value="-6.0" />
 				<param name="mode" value="car" />
-				<param name="monetaryDistanceRate" value="-0.000091" />
+				<param name="monetaryDistanceCostRate" value="-0.000091" />
 			</parameterset>
 		
 	</module>

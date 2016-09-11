@@ -67,6 +67,8 @@ public class CarsharingBerlinControler {
 	
 	public static void installCarSharing(final Controler controler) {
 		
+		Scenario sc = controler.getScenario() ;
+		
 		controler.addOverridingModule( new AbstractModule() {
 			@Override
 			public void install() {
@@ -81,8 +83,8 @@ public class CarsharingBerlinControler {
 				bindMobsim().toProvider( CarsharingQsimFactory.class );
 			}
 		});
-		
-		controler.addOverridingModule(CarsharingUtils.createModule());
+
+		controler.setTripRouterFactory(CarsharingUtils.createTripRouterFactory(sc));
 		
 		final CarsharingConfigGroup csConfig = (CarsharingConfigGroup) controler.getConfig().getModule(CarsharingConfigGroup.GROUP_NAME);
 		controler.addControlerListener(new CarsharingListener(controler,

@@ -2,9 +2,9 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/Maximilian/Documents/Eclipse/libraries/matsim-0.8.0/matsim-0.8.0.jar" sourcepath="C:/Users/Maximilian/Documents/Eclipse/libraries/matsim-0.8.0/matsim-0.8.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Maximilian/Documents/Eclipse/libraries/carsharing-0.8.0/carsharing-0.8.0/carsharing-0.8.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Maximilian/Documents/Eclipse/libraries/populationMatching-0.8.0/populationMatching-0.8.0.jar" sourcepath="C:/Users/Maximilian/Documents/Eclipse/libraries/populationMatching-0.8.0/populationMatching-0.8.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Maximilian/Documents/Eclipse/libraries/utilityfunction-0.8.0/utilityfunction-0.8.0.jar" sourcepath="C:/Users/Maximilian/Documents/Eclipse/libraries/utilityfunction-0.8.0/utilityfunction-0.8.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Maximilian/Documents/Eclipse/libraries/matsim-0.7.0/matsim-0.7.0.jar" sourcepath="C:/Users/Maximilian/Documents/Eclipse/libraries/matsim-0.7.0/matsim-0.7.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Maximilian/Documents/Eclipse/libraries/carsharing-0.7.0/carsharing-0.7.0.jar" sourcepath="C:/Users/Maximilian/Documents/Eclipse/libraries/carsharing-0.7.0/carsharing-0.7.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Maximilian/Documents/Eclipse/libraries/utilityfunction-0.7.0/utilityfunction-0.7.0.jar" sourcepath="C:/Users/Maximilian/Documents/Eclipse/libraries/utilityfunction-0.7.0/utilityfunction-0.7.0-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

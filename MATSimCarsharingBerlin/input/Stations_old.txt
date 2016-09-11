@@ -1,0 +1,4 @@
+Location[0]	Station-No.[1]	GeoX[2]	GeoY[3]	North[4]	East[5]	VehicleCount[6]	OpenParkingSpots (used only for onewaycarsharing)[7]
+1	1	4592970.48190853	5809761.246642432	-	-	1	-
+2	2	4592970.48190853	5809761.246642432	-	-	1	-
+3	3	4599264.773884147	5821314.175229157	-	-	1	-

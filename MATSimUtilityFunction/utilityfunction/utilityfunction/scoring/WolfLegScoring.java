@@ -64,6 +64,9 @@ public class WolfLegScoring implements org.matsim.core.scoring.SumScoringFunctio
 		//if (modeParams.monetaryTimeCostRate != 0.0) { //use ne parameters from modul in config-file (see above)
 		//cost += modeParams.monetaryTimeCostRate * travelTime;
 		
+		else if (leg.getMode().equals("walk_rb")){
+			//no mode-parameters defined
+		}
 		
 		//calc Distance cost //only if available for mode
 		else if (modeParams.monetaryDistanceCostRate != 0.0) {// only relevant for mode = taxi (santiago)
@@ -88,7 +91,7 @@ public class WolfLegScoring implements org.matsim.core.scoring.SumScoringFunctio
 		double tmpScore = 0.0;
 		
 		// switch on mode type
-		if (leg.getMode().equals("walk") || leg.getMode().equals("transit_walk") || leg.getMode().equals("bike")) {
+		if (leg.getMode().equals("walk") || leg.getMode().equals("transit_walk") || leg.getMode().equals("walk_rb") || leg.getMode().equals("bike")) {
 			tmpScore += Double.parseDouble(this.config.getModule(moduleName).getParams().get("MPTValue_Walk")) * this.mptParam;
 		}
 		else if (leg.getMode().equals("colectivo") || leg.getMode().equals("pt")){

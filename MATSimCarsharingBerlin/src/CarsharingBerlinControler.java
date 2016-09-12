@@ -63,6 +63,7 @@ public class CarsharingBerlinControler {
 		controler.run();
 		
 		//TODO: run stats module
+
 	}
 	
 	public static void installCarSharing(final Controler controler) {

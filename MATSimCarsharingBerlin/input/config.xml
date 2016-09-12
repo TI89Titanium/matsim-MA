@@ -124,7 +124,7 @@
 		<param name="vehiclelocationsTwoWayCarsharing" value="&INBASE;/Stations.txt" />	
 		<param name="travelingTwoWayCarsharing" value="-6.0" />
 		<param name="constantTwoWayCarsharing" value="-0.4" />
-        <param name="timeFeeTwoWayCarsharing" value="-0.0" />
+        <param name="timeFeeTwoWayCarsharing" value="-0.0" /> 
 		<param name="distanceFeeTwoWayCarsharing" value="-0.0" />
         <param name="useTwoWayCarsharing" value="true" />
         <param name="searchDistanceTwoWayCarsharing" value="1000.0" />

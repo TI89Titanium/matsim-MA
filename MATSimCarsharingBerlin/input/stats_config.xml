@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<!DOCTYPE config SYSTEM "http://www.matsim.org/files/dtd/config_v2.dtd"
+	[
+		<!ENTITY OUTBASE "../MATSimCarSharingBerlin/output">
+		<!ENTITY INBASE  "../MATSimCarSharingBerlin/input">
+	]
+>
+
+<config>
+	<module name="global">
+		<param name="coordinateSystem" value="GK4" />
+	</module>
+	
+	<module name="network">
+		<param name="inputNetworkFile" value="&INBASE;/network_berlin.xml.gz" />
+	</module>
+	
+	<module name="plans">
+		<param name="inputPlansFile" value="&OUTBASE;/output_plans.xml.gz" />
+		<param name="inputPersonAttributesFile" value="&OUTBASE;/output_personAttributes.xml.gz" />
+	</module>
+	
+</config>

@@ -33,7 +33,7 @@
 	<module name="controler">
 		<param name="outputDirectory" value="&OUTBASE;" />
 		<param name="firstIteration" value="0" />
-		<param name="lastIteration" value="2" />
+		<param name="lastIteration" value=100" />
 		<param name="eventsFileFormat" value="xml" />
 		<param name="mobsim" value="qsim" />
 		<param name="writePlansInterval" value="50" />
@@ -45,7 +45,9 @@
 	<!-- ================  Parameters for Advanced Utility Function  ================ -->
 
 	<module name="UtilityFunctionParameters" >
-		<param name="MPT_Parmeter" value="2.0" />	
+		<param name="MPT_Parmeter" value="1.0" />
+		<param name="monetaryDistanceRate_car_km" value="-0.5" />
+		<param name="monetaryDistanceRate_twowaycarsharing_km" value="-0.3" />	
 	</module>
 
 <!-- ================  Modal Preference Type Module - MPT  ================ -->
@@ -123,11 +125,11 @@
 	<module name="TwoWayCarsharing" >
 		<param name="vehiclelocationsTwoWayCarsharing" value="&INBASE;/Stations.txt" />	
 		<param name="travelingTwoWayCarsharing" value="-6.0" />
-		<param name="constantTwoWayCarsharing" value="-0.4" />
+		<param name="constantTwoWayCarsharing" value="-0.0" />
         <param name="timeFeeTwoWayCarsharing" value="-0.0" /> 
 		<param name="distanceFeeTwoWayCarsharing" value="-0.0" />
         <param name="useTwoWayCarsharing" value="true" />
-        <param name="searchDistanceTwoWayCarsharing" value="1000.0" />
+        <param name="searchDistanceTwoWayCarsharing" value="2000.0" />
 
 	</module>
 
@@ -201,7 +203,7 @@
 				<param name="marginalUtilityOfDistance_util_m" value="0.0" />
 				<param name="marginalUtilityOfTraveling_util_hr" value="-6.0" />
 				<param name="mode" value="car" />
-				<param name="monetaryDistanceCostRate" value="-0.000091" />
+				<param name="monetaryDistanceCostRate" value="-0.0" />
 			</parameterset>
 		
 	</module>

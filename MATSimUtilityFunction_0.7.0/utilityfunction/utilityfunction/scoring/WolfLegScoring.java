@@ -23,6 +23,8 @@ public class WolfLegScoring implements org.matsim.core.scoring.SumScoringFunctio
 	protected final CharyparNagelScoringParameters params;
 	/** Additional Parameters */
 	protected final double mptParam;
+	protected final double monetaryDistanceRate_car_km;
+	protected final double monetaryDistanceRate_twowaycarsharing_km;
 	protected final Person person;
 	protected final ObjectAttributes personAttributes;
 	protected Network network; //nerver used?
@@ -37,6 +39,8 @@ public class WolfLegScoring implements org.matsim.core.scoring.SumScoringFunctio
 		this.network = network;
 		this.config = config;
 		this.mptParam = Double.parseDouble(this.config.getModule("UtilityFunctionParameters").getParams().get("MPT_Parmeter"));
+		this.monetaryDistanceRate_car_km = Double.parseDouble(this.config.getModule("UtilityFunctionParameters").getParams().get("monetaryDistanceRate_car_km"));
+		this.monetaryDistanceRate_twowaycarsharing_km = Double.parseDouble(this.config.getModule("UtilityFunctionParameters").getParams().get("monetaryDistanceRate_twowaycarsharing_km"));
 		//needs to get person information too?!
 	}
 		
@@ -59,13 +63,19 @@ public class WolfLegScoring implements org.matsim.core.scoring.SumScoringFunctio
 			
 			cost += dist * Double.parseDouble(this.config.getModule("TwoWayCarsharing").getParams().get("distanceFeeTwoWayCarsharing"));
 			cost += travelTime * Double.parseDouble(this.config.getModule("TwoWayCarsharing").getParams().get("timeFeeTwoWayCarsharing"));
+			cost += dist/1000 * monetaryDistanceRate_twowaycarsharing_km; //distance in km times distance rate
 		}
 		//Double.parseDouble(this.config.getModule("TwoWayCarsharing").getParams().get("constantTwoWayCarsharing"));
 		//if (modeParams.monetaryTimeCostRate != 0.0) { //use ne parameters from modul in config-file (see above)
 		//cost += modeParams.monetaryTimeCostRate * travelTime;
 		
 		else if (leg.getMode().equals("walk_rb")){
-			//no mode-parameters defined
+			//no monetary mode-parameters defined
+		}
+		
+		else if (leg.getMode().equals("car")){
+			//distance in km times distance rate
+			cost += dist/1000 * monetaryDistanceRate_car_km; //monetaryDistanceCostRate in planCalcScore modeParams for car need to be 0.0 (otherwise it would be scored twice)
 		}
 		
 		//calc Distance cost //only if available for mode

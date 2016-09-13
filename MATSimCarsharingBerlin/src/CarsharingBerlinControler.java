@@ -2,6 +2,10 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import org.apache.log4j.Logger;
 import org.matsim.api.core.v01.Scenario;
 import org.matsim.api.core.v01.population.Activity;
@@ -49,7 +53,7 @@ public class CarsharingBerlinControler {
 		final Scenario scenario = populationMatching.matchPopulationSpecificModes(config, csvFile, selectedModes);
 		
 		//Create Carsharing Stations
-		createCarsharingStations(scenario, 1);
+		createCarsharingStations(scenario, 3000);
 				
 		//controler for MATSim
 		Controler controler = new Controler(scenario);
@@ -92,11 +96,11 @@ public class CarsharingBerlinControler {
 				csConfig.getStatsWriterFrequency() ) ) ;
 	}
 	
-	public static void createCarsharingStations(Scenario sc, double percentage){
+	public static void createCarsharingStations(Scenario sc, int numberOfStations){
 		
-		if (percentage > 1){
-			System.out.println("Please enter Carsharing-Station-Percentage <= 1. Percentage is set to 1 (100%).");
-			percentage = 1.0;
+		if (numberOfStations > sc.getPopulation().getPersons().size()){
+			System.out.println("Please enter number of Carsharing Stations smaler then number of agents. Number of Stations is set to number of agents.");
+			numberOfStations = sc.getPopulation().getPersons().size();
 		}
 		
 		try{
@@ -117,9 +121,10 @@ public class CarsharingBerlinControler {
 		}
 		bw.newLine();
 		int stationCount = 1;
-		String[] stationInformation = new String[7];
+		List<String[]> stations = new ArrayList<String[]>();
 		
 		for (Person person : sc.getPopulation().getPersons().values()){
+			String[] stationInformation = new String[7];
 			stationInformation[0] = Integer.toString(stationCount);
 			stationInformation[1] = stationInformation[0];
 			Activity firstActivity = ((PlanImpl)(person.getSelectedPlan())).getFirstActivity();
@@ -128,18 +133,29 @@ public class CarsharingBerlinControler {
 			stationInformation[4] = "-";
 			stationInformation[5] = "-";
 			stationInformation[6] = "1";
-			for (String stI : stationInformation){
-				bw.write(stI);
-				bw.write("\t");
-			}
-			bw.newLine();
+			
+			stations.add(stationInformation);
 			stationCount++;
 		}
-			
+		
+		//randomly distribute the stations, so if the wanted number of stations
+		//is lower then number of agents, the carsharing stations are distributed
+		//randomly
+		Collections.shuffle(stations);
+		
+		int i = 0;
+		while (i < numberOfStations) {//end when wanted number of stations is reached
+			for (String stI : stations.get(i)){
+			bw.write(stI);
+			bw.write("\t");
+			}
+		bw.newLine();
+		i++;
+		}
 		
 		bw.close();
-		
-		} catch (IOException e) {
+				
+		}	catch (IOException e) {
 			e.printStackTrace();
 		}
 		

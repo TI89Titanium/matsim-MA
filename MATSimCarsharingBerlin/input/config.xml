@@ -139,18 +139,19 @@
 		<param name="maxAgentPlanMemorySize" value="5" /> <!-- 0 means unlimited -->
 		<param name="planSelectorForRemoval" value="WorstPlanSelector" />
 
-		<param name="ModuleProbability_1" value="0.8" />
+		<param name="ModuleProbability_1" value="0.7" />
 		<param name="Module_1" value="ChangeExpBeta" />
 
-		<!-- 
-		<param name="ModuleProbability_2" value="0.2" />
-		<param name="Module_2" value="ReRoute" />
-		<param name="ModuleDisableAfterIteration_2" value="200" />
-		 -->
-		
+				
 		<param name="Module_2" value="ChangeTripMode" />
 		<param name="ModuleProbability_2" value="0.2" />
 		<param name="ModuleDisableAfterIteration_2" value="500" />
+		
+		 
+		<param name="ModuleProbability_3" value="0.1" />
+		<param name="Module_3" value="ReRoute" />
+		<param name="ModuleDisableAfterIteration_3" value="500" />
+		
 		 
 		<!-- 
 		<param name="Module_2" value="RandomTripToCarsharingStrategy" />

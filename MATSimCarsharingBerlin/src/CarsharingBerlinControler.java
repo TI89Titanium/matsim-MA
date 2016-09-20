@@ -50,10 +50,11 @@ public class CarsharingBerlinControler {
 		PopulationMatching populationMatching = new PopulationMatching();
 		String selectedModes[] = {"D", "E"};
 		//Match Population with Survey (specific modes car and ride)
-		final Scenario scenario = populationMatching.matchPopulationSpecificModes(config, csvFile, selectedModes);
+		//final Scenario scenario = populationMatching.matchPopulationSpecificModes(config, csvFile, selectedModes);
+		final Scenario scenario = populationMatching.matchPopulation(config, csvFile);
 		
 		//Create Carsharing Stations
-		int numberOfStations = 3000;
+		int numberOfStations = 6000;
 		createCarsharingStations(scenario, numberOfStations);
 				
 		//controler for MATSim

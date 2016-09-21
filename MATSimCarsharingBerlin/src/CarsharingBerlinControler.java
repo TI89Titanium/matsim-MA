@@ -54,7 +54,7 @@ public class CarsharingBerlinControler {
 		final Scenario scenario = populationMatching.matchPopulation(config, csvFile);
 		
 		//Create Carsharing Stations
-		int numberOfStations = 6000;
+		int numberOfStations = 13000;
 		createCarsharingStations(scenario, numberOfStations);
 				
 		//controler for MATSim
@@ -68,10 +68,23 @@ public class CarsharingBerlinControler {
 		//run MATSim
 		controler.run();
 		
-		//TODO: run stats module
-
+		//run Stats module
+		createStats();
+		
 	}
 	
+	private static void createStats() {
+		String statsConfigFile = "input/stats_config.xml";
+		
+		CarsharingBerlinStats stats = new CarsharingBerlinStats(statsConfigFile);
+		List<String[]> statsList= new ArrayList<String[]>();
+				
+		statsList = stats.getStatsList();
+		
+		stats.writeStatsToFile("output", statsList);
+		
+	}
+
 	public static void installCarSharing(final Controler controler) {
 		
 		Scenario sc = controler.getScenario() ;

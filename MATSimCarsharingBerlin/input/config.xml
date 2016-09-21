@@ -9,6 +9,7 @@
 <config>
 	<module name="global">
 		<param name="coordinateSystem" value="GK4" />
+		<param name="numberOfThreads" value="4"/> 
 	</module>
 	
 	<module name="network">
@@ -23,7 +24,19 @@
 		<param name="flowCapacityFactor" value="0.02" />
 		<param name="storageCapacityFactor" value="0.02" />
 		<param name="removeStuckVehicles" value="false" />
-	 	<param name="mainMode" value="car,twowaycarsharing"   />  
+	 	<param name="mainMode" value="car,twowaycarsharing"   />
+	 	<param name="numberOfThreads" value="1"/>  
+	</module>
+	
+	<module name="parallelEventHandling" >
+
+		<!-- Estimated number of events during mobsim run. An optional optimization hint for the framework. -->
+		<param name="estimatedNumberOfEvents" value="null" />
+
+		<!-- Number of threads for parallel events handler. 0 or null means the framework decides by itself. -->
+		<param name="numberOfThreads" value="4" />
+
+		<param name="synchronizeOnSimSteps" value="true" />
 	</module>
 	
 	<module name="vspExperimental">
@@ -36,8 +49,8 @@
 		<param name="lastIteration" value="1000" />
 		<param name="eventsFileFormat" value="xml" />
 		<param name="mobsim" value="qsim" />
-		<param name="writePlansInterval" value="50" />
-		<param name="writeEventsInterval" value="50" />
+		<param name="writePlansInterval" value="200" />
+		<param name="writeEventsInterval" value="200" />
 		<param name="snapshotFormat" value="" />
 	</module>
 	

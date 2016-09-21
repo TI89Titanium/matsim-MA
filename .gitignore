@@ -27,6 +27,7 @@ output_plans_100it.xml
 MATSimUtilityFunction/input/output_plans_100it.xml
 plans_matching_test.xml
 plans_selected_car_berlin.xml.gz
+Stations.txt
 
 =======
 
@@ -82,4 +83,3 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-MATSimCarsharingBerlin/input/Stations.txt

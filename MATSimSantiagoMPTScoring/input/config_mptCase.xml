@@ -3022,7 +3022,7 @@
 		<!-- Path to a file containing person attributes (required file format: ObjectAttributes). -->
 		<param name="inputPersonAttributesFile" value="&INBASE;/agentAttributes.xml" />
 
-		<param name="inputPlansFile" value="&INBASE;/plans_final.xml.gz" />
+		<param name="inputPlansFile" value="&INBASE;/output_plans.xml.gz" />
 
 		<!-- Defines how routes are stored in memory. Currently supported: LinkNetworkRoute, CompressedNetworkRoute. -->
 		<param name="networkRouteType" value="LinkNetworkRoute" />

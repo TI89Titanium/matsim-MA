@@ -39,8 +39,8 @@ public List<String[]> getStatsList(){
 		String[] personStats = new String[4];
 		personStats[0] = person.getId().toString();
 		personStats[1] = personAttributes.getAttribute(person.getId().toString(), "MPT").toString();
-		personStats[3] = getMode(person);
-		personStats[4] = person.getSelectedPlan().getScore().toString();
+		personStats[2] = getMode(person);
+		personStats[3] = person.getSelectedPlan().getScore().toString();
 		
 		populationStats.add(personStats);
 		

@@ -24,11 +24,11 @@ import org.matsim.core.replanning.selectors.RandomPlanSelector;
 import org.matsim.core.replanning.strategies.DefaultPlanStrategiesModule;
 import org.matsim.core.router.TripRouter;
 
-import SantiagoScenarioRunner.SubtourModeChoiceProvider;
 import playground.santiago.SantiagoScenarioConstants;
 import playground.santiago.run.PTFareHandler;
 import utilityfunction.config.UtilityFunctionUtils;
 import utilityfunction.population.PopulationMatching;
+import utilityfunction.scoring.MPTLegScoringFunctionFactory;
 
 public class SantiagoMPTScoringControler {
 

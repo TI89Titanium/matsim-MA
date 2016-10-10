@@ -15,7 +15,7 @@ import org.matsim.utils.objectattributes.ObjectAttributes;
  * @author Maximilian Wolf (GitHub: <a href="https://github.com/TI89Titanium">TI89Titanium</a>)
  */
 
-public class MTPLegScoring implements org.matsim.core.scoring.SumScoringFunction.LegScoring, org.matsim.core.scoring.SumScoringFunction.ArbitraryEventScoring {
+public class MPTLegScoring implements org.matsim.core.scoring.SumScoringFunction.LegScoring, org.matsim.core.scoring.SumScoringFunction.ArbitraryEventScoring {
 	//declare parameters
 	protected double score;
 	/** The parameters used for scoring */
@@ -29,7 +29,7 @@ public class MTPLegScoring implements org.matsim.core.scoring.SumScoringFunction
 	
 	//TODO add parameter (instance of parameter-class "WolfScoringParameters"
 	//public final double monetaryDistanceRate; etc.
-	public MTPLegScoring (final CharyparNagelScoringParameters params,Person person,ObjectAttributes personAttributes, Network network, Config config){
+	public MPTLegScoring (final CharyparNagelScoringParameters params,Person person,ObjectAttributes personAttributes, Network network, Config config){
 		this.params = params;
 		this.person = person;
 		this.personAttributes = personAttributes;
@@ -45,8 +45,6 @@ public class MTPLegScoring implements org.matsim.core.scoring.SumScoringFunction
 		
 	}
 	protected double calcMPTScore(Leg leg) {
-		
-		
 		
 		String mpt = (String) personAttributes.getAttribute(person.getId().toString(), "MPT");
 		
